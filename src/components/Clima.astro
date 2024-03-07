@@ -5,7 +5,7 @@ const consultarApi = async () => {
     // try y catch es prueba y error, primero prueba que se ejecute la función y en el caso de que no lo haga se va a catch (parecido a if y else, pero no es un condicional)
 
     try {
-        const url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Tijuana/2024-03-06/2024-03-07?unitGroup=metric&key=Z65J38JK2UB3LYJZ5KC2K9FBN&contentType=json" // Este es el link de la API a la que vamos a conectar
+        const url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Tijuana/2024-03-06/2024-03-08?unitGroup=metric&key=Z65J38JK2UB3LYJZ5KC2K9FBN&contentType=json" // Este es el link de la API a la que vamos a conectar
 
         const response = await fetch(url) // Conectamos a la api para extraer el json
 
@@ -32,18 +32,7 @@ const consultarApi = async () => {
 consultarApi()
 ---
 
-<div class="contenedor">
-    <div class="item1">1</div>
-
-    <div class="item2">
-        <img src='#'>
-
-        <div class="texto">
-            <h1></h1>
-            <h1></h1>
-        </div>
-    </div>
-
+<section class="contenedor">
     <div class="item3">
         <h3>dia2</h3>
         <img src="/sun-solid.svg" style="height: 30px; width:30px;">
@@ -77,33 +66,28 @@ consultarApi()
     <div class="item8">
         <h3>dia2</h3>
         <img src="/sun-solid.svg" style="height: 50px; width:50px;">
-        <p>12</p></div>
-</div>
+        <p>12</p>
+    </div>
+
+</section>
 
 <style>
-    .contenedor{
-        display: inline-grid;
-        grid-template-columns: 230px repeat(6, 80px);
-        grid-template-rows: 100px;
+    .contenedor {
+        justify-content: space-between;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 500px repeat(5, 1fr);
         gap: 10px;
         background-color: #2196F3;
         padding: 10px;
-        grid-template-areas: 
-        'item1 item1 item1 item1 item1 item1 item1' 
-        'item2 item3 item4 item5 item6 item7 item8';
     }
     
 
     .contenedor > div {
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
-
     }
 
-    .item1 {
-        grid-column-start: 1;
-        grid-column-end: 8;
-    }
 
     img {
         width: 70px;

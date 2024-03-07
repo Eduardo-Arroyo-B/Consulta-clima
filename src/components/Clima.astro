@@ -1,46 +1,82 @@
 ---
+// Aquí se declara la función asíncrona (buscar término de asincronía) que permite llamar y extraer los datos de la API
+const consultarApi = async () => {
 
+    // try y catch es prueba y error, primero prueba que se ejecute la función y en el caso de que no lo haga se va a catch (parecido a if y else, pero no es un condicional)
+
+    try {
+        const url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Tijuana/2024-03-06/2024-03-07?unitGroup=metric&key=Z65J38JK2UB3LYJZ5KC2K9FBN&contentType=json" // Este es el link de la API a la que vamos a conectar
+
+        const response = await fetch(url) // Conectamos a la api para extraer el json
+
+        if (!response.ok) {
+            throw new Error('Error al consultar la API') // En el caso de que la respuesta no sea OK lanza un error
+        }
+
+        const result = await response.json() // Extrae los datos json de la API
+
+        result.days.map( day => {
+            console.log("Fecha:", day.datetime)
+            console.log("Temperatura:", day.temp)
+            console.log("Condiciones:", day.conditions)
+        })
+
+        return result; // Devolviendo los datos de la API
+
+    } catch (error) {
+        console.log("Error al consultar la API:", error) // Manda el error en la consola
+        return null;
+    }
+
+}
+consultarApi()
 ---
 
 <div class="contenedor">
     <div class="item1">1</div>
 
     <div class="item2">
-        <img src="sun-solid.svg">
+        <img src='#'>
 
         <div class="texto">
-            <h2>HOY</h2>
-            <h1>2</h1>
+            <h1></h1>
+            <h1></h1>
         </div>
     </div>
+
     <div class="item3">
         <h3>dia2</h3>
-        <img src="/sun-solid.svg" style="height: 30px; width:30px; align-content: center;">
+        <img src="/sun-solid.svg" style="height: 30px; width:30px;">
         <p>12`</p>
-    </div>  
+    </div>
+
     <div class="item4">
         <h3>dia2</h3>
-        <img src="sun-solid.svg" style="height: 50px; width:50px;float:center;">
+        <img src="/sun-solid.svg" style="height: 50px; width:50px;">
         <p>12`</p>
     </div>
+
     <div class="item5">
         <h3>dia2</h3>
-        <img src="sun-solid.svg" style="height: 50px; width:50px;float:center;">
+        <img src="/sun-solid.svg" style="height: 50px; width:50px;">
         <p>12`</p>
     </div>
+
     <div class="item6">
         <h3>dia2</h3>
-        <img src="sun-solid.svg" style="height: 50px; width:50px;float:center;">
+        <img src="/sun-solid.svg" style="height: 50px; width:50px;">
         <p>12`</p>
     </div>
+
     <div class="item7">
         <h3>dia2</h3>
-        <img src="sun-solid.svg" style="height: 50px; width:50px;float:center;">
+        <img src="/sun-solid.svg" style="height: 50px; width:50px;">
         <p>12`</p>
     </div>
+
     <div class="item8">
         <h3>dia2</h3>
-        <img src="sun-solid.svg" style="height: 50px; width:50px;float:center;">
+        <img src="/sun-solid.svg" style="height: 50px; width:50px;">
         <p>12</p></div>
 </div>
 

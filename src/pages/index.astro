@@ -5,13 +5,93 @@ import Clima from '../components/Clima.astro';
 
 <Layout title="Weather app">
 	<main>
-		<Clima>
-
-		</Clima>
+		<div class="contenedor">
+			<div class="item1">
+				<Clima 
+				dia='hola'
+				img='sun-solid.svg' 
+				grados={3}/>
+				
+				
+			</div>
+		
+			<div class="item2">
+				<img src="sun-solid.svg">
+		
+				<div class="texto">
+					<h2>HOY</h2>
+					<h1>2</h1>
+				</div>
+			</div>
+			<div class="item3">
+				<Clima 
+				dia='hola'
+				img='sun-solid.svg' 
+				grados={3}/>
+			</div>  
+			<div class="item4">
+				<h3>dia2</h3>
+				<img src="sun-solid.svg">
+				<p>12`</p>
+			</div>
+			<div class="item5">
+				<h3>dia2</h3>
+				<img src="sun-solid.svg" >
+				<p>12`</p>
+			</div>
+			<div class="item6">
+				<h3>dia2</h3>
+				<img src="sun-solid.svg" >
+				<p>12`</p>
+			</div>
+			<div class="item7">
+				<h3>dia2</h3>
+				<img src="sun-solid.svg" >
+				<p>12`</p>
+			</div>
+			<div class="item8">
+				<h3>dia2</h3>
+				<img src="sun-solid.svg" >
+				<p>12</p>
+			</div>
+		</div>
 
 	</main>
 </Layout>
 
 <style>
+	.contenedor{
+        display: inline-grid;
+        grid-template-columns: 230px repeat(6, 80px);
+        grid-template-rows: 100px;
+        gap: 10px;
+        background-color: #2196F3;
+        padding: 10px;
+        grid-template-areas: 
+        'item1 item1 item1 item1 item1 item1 item1' 
+        'item2 item3 item4 item5 item6 item7 item8';
+    }
+    
 
+    .contenedor > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+
+    }
+
+    .item1 {
+        grid-column-start: 1;
+        grid-column-end: 8;
+    }
+	
+    .item2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+	.item3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 </style>

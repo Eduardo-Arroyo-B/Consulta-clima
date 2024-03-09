@@ -1,62 +1,55 @@
 ---
-interface Props {
-	title: string;
-	body: string;
-	href: string;
-}
 
-const { href, title, body } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<script>
+	let myDate = new Date();
+	let hours = myDate.getHours();
+	let minutes = myDate.getMinutes();
+	document.getElementById("Hora").innerHTML = `${hours}:${minutes}`;
+</script>
+
+<script>
+	const daysOfWeek = ["sábado", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Domingo"];
+	const date = new Date();
+	const dayName = daysOfWeek[date.getDay()];
+	document.getElementById("Fecha").innerHTML = `${dayName}, ${date.toLocaleDateString()}`;
+</script>
+
+<section class="detalles">
+	
+	<h1 id="Hora">1000</h1>
+
+	<p id="Fecha"></p>
+	<h2 class="g">Ciudad</h2>
+	
+</section>
 
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
+	.detalles {
+		background: url("/public/paisaje.jpg") no-repeat fixed;
+		width: 60%;
+		height: 400px;
 		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
+
+	.detalles h1 {
+		font-size: 50px;
+		display: flex;
+		padding-top: 60px;
+		padding-left: 20px;
 	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
+
+	.detalles p {
+		display: flex;
+		
+		padding-left: 20px;
 	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
+
+	.g {
+		display: flex;
+		align-items:flex-end;
+  		justify-content: flex-end;
+		padding-right: 20px;
 	}
 </style>

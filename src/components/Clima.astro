@@ -1,4 +1,6 @@
 ---
+import ClimaDescrip from "./Clima-Descrip.astro"
+
 // Aquí se declara la función asíncrona (buscar término de asincronía) que permite llamar y extraer los datos de la API
 const consultarApi = async () => {
 
@@ -30,74 +32,59 @@ const consultarApi = async () => {
 
 }
 consultarApi()
+
 ---
 
 <section class="contenedor">
-    <div class="item3">
-        <h3>dia2</h3>
-        <img src="/sun-solid.svg" style="height: 30px; width:30px;">
-        <p>12`</p>
-    </div>
 
-    <div class="item4">
-        <h3>dia2</h3>
-        <img src="/sun-solid.svg" style="height: 50px; width:50px;">
-        <p>12`</p>
-    </div>
+    <ClimaDescrip
+    dia="dia"
+    img="/sun-solid.svg"
+    grados="12"/>
 
-    <div class="item5">
-        <h3>dia2</h3>
-        <img src="/sun-solid.svg" style="height: 50px; width:50px;">
-        <p>12`</p>
-    </div>
+    <ClimaDescrip
+    dia="dia"
+    img="/sun-solid.svg"
+    grados="12"/>
 
-    <div class="item6">
-        <h3>dia2</h3>
-        <img src="/sun-solid.svg" style="height: 50px; width:50px;">
-        <p>12`</p>
-    </div>
+    <ClimaDescrip
+    dia="dia"
+    img="/sun-solid.svg"
+    grados="12"/>
 
-    <div class="item7">
-        <h3>dia2</h3>
-        <img src="/sun-solid.svg" style="height: 50px; width:50px;">
-        <p>12`</p>
-    </div>
+    <ClimaDescrip
+    dia="dia"
+    img="/sun-solid.svg"
+    grados="12"/>
 
-    <div class="item8">
-        <h3>dia2</h3>
-        <img src="/sun-solid.svg" style="height: 50px; width:50px;">
-        <p>12</p>
-    </div>
+    <ClimaDescrip
+    dia="dia"
+    img="/sun-solid.svg"
+    grados="12"/>
+
+    <ClimaDescrip
+    dia="dia"
+    img="/sun-solid.svg"
+    grados="12"/>
+
+    <ClimaDescrip
+    dia="dia"
+    img="/sun-solid.svg"
+    grados="12"/>
 
 </section>
 
+
 <style>
     .contenedor {
-        justify-content: space-between;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 500px repeat(5, 1fr);
-        gap: 10px;
-        background-color: #2196F3;
-        padding: 10px;
-    }
     
+        width: 60%;
+        display: grid;
+        grid-template-columns: 2fr repeat(6, 1fr);
+        gap: 10px;
+        background-color: #303849;
+        padding: 10px;
+        color: white;
 
-    .contenedor > div {
-        background-color: rgba(255, 255, 255, 0.8);
-        text-align: center;
     }
-
-
-    img {
-        width: 70px;
-        height: 70px;
-    }
-
-    .item2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
 </style>

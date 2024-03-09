@@ -8,28 +8,30 @@ interface Props {
 const { dia, img, grados } = Astro.props;
 ---
 
-<li class="Cartas">
+<div class="Carta">
     <h2>{dia}</h2>
     <img src={img}>
     <p>{grados}</p>
-</li>
+</div>
 
 
 <style>
-    .Cartas {
-        display: flex;
-        align-items: center;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    h2 {
-        font-size: 10px;
+    .Carta {
+        position: relative;
         text-align: center;
     }
-    img {
 
+    .Carta h2 {
+        font-size: 1rem;
+        text-align: center;
     }
-    p {
-        font-size: 15px;
+    .Carta img {
+        height: 50px; 
+		width:50px;
+        margin-top: 5px;
+    }
+    .Carta p {
+        font-size: 2rem;
         text-align: center;
     }
 </style>
